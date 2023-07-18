@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    app:cardBackgroundColor="@color/white"
+    app:strokeWidth="1dp"
+    app:strokeColor="@color/black"
+    android:checkable="true"
+    android:id="@+id/cardMain"
+    app:rippleColor="?attr/colorPrimary"
+    android:clickable="true"
+    app:contentPadding="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="0dp"
+    android:layout_margin="16dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        
+
+        
+        <TextView
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="Lorem Ipsum"
+            android:textSize="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        
+        
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
