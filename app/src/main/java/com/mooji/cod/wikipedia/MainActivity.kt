@@ -6,9 +6,9 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
-import com.mooji.cod.wikipedia.Fragments.FragmentExplore
-import com.mooji.cod.wikipedia.Fragments.FragmentProfile
-import com.mooji.cod.wikipedia.Fragments.FragmentTrend
+import com.mooji.cod.wikipedia.fragments.FragmentExplore
+import com.mooji.cod.wikipedia.fragments.FragmentProfile
+import com.mooji.cod.wikipedia.fragments.FragmentTrend
 import com.mooji.cod.wikipedia.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
