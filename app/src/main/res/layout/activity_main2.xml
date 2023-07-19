@@ -90,12 +90,27 @@ Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit 
 
     </androidx.core.widget.NestedScrollView>
 
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:layout_margin="16dp"
+        app:icon="@drawable/ic_explore"
+        android:id="@+id/extended_fab"
+        android:text="Open Website"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
 <!--    <androidx.fragment.app.FragmentContainerView-->
 <!--        android:id="@+id/frame_main_container"-->
 <!--        android:name="com.mooji.cod.wikipedia.fragments.FragmentToolbarScrollFlags"-->
 <!--        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="match_parent"/>-->
+
+<!--     فب را میشود مخفی و یا نشان داد که با انیمیشن خاصی فب مخفی یا نشان داده میشود-->
+<!--     مثل دکمه فلش به پایین در تلگرام البته باید اسکرولویو یا ریسایکلر را متوجه ساخت که مثلا وقتی-->
+<!--     به سمت بالا اسکرول شد فب نمایش داده شود و وقتی به سمت پایین یا در پایین قرار داشت مخفی شود-->
+<!--     توضیحات این مورد در متریال قسمت فب وجود دارد-->
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
