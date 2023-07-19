@@ -31,11 +31,7 @@ class MainActivity2 : AppCompatActivity() {
 
         //تمام button هایی که در Toolbar هستند در حکم منو میباشند
 
-        binding.extendedFab.setOnClickListener {
 
-            // open website
-
-        }
 
 
     }
