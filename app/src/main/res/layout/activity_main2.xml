@@ -100,10 +100,11 @@ Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit 
     <!--        android:layout_width="match_parent"-->
     <!--        android:layout_height="match_parent"/>-->
 
+
     <!--     فب را میشود مخفی و یا نشان داد که با انیمیشن خاصی فب مخفی یا نشان داده میشود-->
     <!--     مثل دکمه فلش به پایین در تلگرام البته باید اسکرولویو یا ریسایکلر را متوجه ساخت که مثلا وقتی-->
     <!--     به سمت بالا اسکرول شد فب نمایش داده شود و وقتی به سمت پایین یا در پایین قرار داشت مخفی شود-->
-    <!--     توضیحات این مورد در متریال قسمت فب وجود دارد-->
+    <!--     توضیحات این مورد در متریال قسمت فب مطالعه شود-->
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
