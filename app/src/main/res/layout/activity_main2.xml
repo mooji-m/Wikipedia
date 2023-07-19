@@ -8,65 +8,64 @@
 
 
     <com.google.android.material.appbar.AppBarLayout
-        app:liftOnScroll="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:liftOnScroll="true">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
-            app:title="Nature"
             android:id="@+id/collapsingMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:theme="@style/Theme.MaterialComponents"
             app:contentScrim="@color/blue"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            app:title="Nature">
 
             <ImageView
-                app:layout_collapseMode="parallax"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:src="@drawable/test_nature"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                app:layout_collapseMode="parallax" />
 
             <androidx.appcompat.widget.Toolbar
-                app:layout_collapseMode="pin"
                 android:id="@+id/toolbarMani2"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"/>
-
-
-
+                android:layout_height="56dp"
+                app:layout_collapseMode="pin" />
 
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
-
 
 
     </com.google.android.material.appbar.AppBarLayout>
 
 
     <androidx.core.widget.NestedScrollView
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
 
         <LinearLayout
-            android:padding="16sp"
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16sp">
 
             <TextView
-                android:textStyle="bold"
-                android:textSize="22sp"
-                android:textColor="@color/black_light"
-                android:text="Lorem Ipsum"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:text="Lorem Ipsum"
+                android:textColor="@color/black_light"
+                android:textSize="22sp"
+                android:textStyle="bold" />
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:lineSpacingExtra="5dp"
                 android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
 
 Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum.
@@ -76,41 +75,35 @@ Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque vol
 Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet. Donec lacus nunc, viverra nec, blandit vel, egestas et, augue.
 
 Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa. Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet."
-                android:lineSpacingExtra="5dp"
-                android:textColor="@color/black_light"
-                android:layout_marginTop="6dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
+                android:textColor="@color/black_light" />
 
 
         </LinearLayout>
-
 
 
     </androidx.core.widget.NestedScrollView>
 
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:layout_margin="16dp"
-        app:icon="@drawable/ic_explore"
         android:id="@+id/extended_fab"
-        android:text="Open Website"
-        android:layout_gravity="bottom|center_horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_margin="16dp"
+        android:text="Open Website"
+        app:icon="@drawable/ic_explore" />
 
-<!--    <androidx.fragment.app.FragmentContainerView-->
-<!--        android:id="@+id/frame_main_container"-->
-<!--        android:name="com.mooji.cod.wikipedia.fragments.FragmentToolbarScrollFlags"-->
-<!--        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"/>-->
+    <!--    <androidx.fragment.app.FragmentContainerView-->
+    <!--        android:id="@+id/frame_main_container"-->
+    <!--        android:name="com.mooji.cod.wikipedia.fragments.FragmentToolbarScrollFlags"-->
+    <!--        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"/>-->
 
-<!--     فب را میشود مخفی و یا نشان داد که با انیمیشن خاصی فب مخفی یا نشان داده میشود-->
-<!--     مثل دکمه فلش به پایین در تلگرام البته باید اسکرولویو یا ریسایکلر را متوجه ساخت که مثلا وقتی-->
-<!--     به سمت بالا اسکرول شد فب نمایش داده شود و وقتی به سمت پایین یا در پایین قرار داشت مخفی شود-->
-<!--     توضیحات این مورد در متریال قسمت فب وجود دارد-->
+    <!--     فب را میشود مخفی و یا نشان داد که با انیمیشن خاصی فب مخفی یا نشان داده میشود-->
+    <!--     مثل دکمه فلش به پایین در تلگرام البته باید اسکرولویو یا ریسایکلر را متوجه ساخت که مثلا وقتی-->
+    <!--     به سمت بالا اسکرول شد فب نمایش داده شود و وقتی به سمت پایین یا در پایین قرار داشت مخفی شود-->
+    <!--     توضیحات این مورد در متریال قسمت فب وجود دارد-->
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
