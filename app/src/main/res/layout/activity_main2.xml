@@ -80,7 +80,8 @@ Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit 
                 android:textColor="@color/black_light"
                 android:layout_marginTop="6dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                tools:ignore="HardcodedText" />
 
 
 
@@ -89,6 +90,19 @@ Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit 
 
 
     </androidx.core.widget.NestedScrollView>
+
+<!--            app:fabSize="mini"-->
+<!--            app:fabCustomSize="100dp"-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        app:fabCustomSize="75dp"
+        app:tint="#84FFFF"
+        android:backgroundTint="@color/blue"
+        android:id="@+id/fab_open_website"
+        android:src="@drawable/ic_explore"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 <!--    <androidx.fragment.app.FragmentContainerView-->
 <!--        android:id="@+id/frame_main_container"-->
