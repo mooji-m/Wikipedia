@@ -8,7 +8,7 @@ import androidx.core.content.ContextCompat
 import com.mooji.cod.wikipedia.databinding.ActivityMain2Binding
 
 class MainActivity2 : AppCompatActivity() {
-    lateinit var binding:ActivityMain2Binding
+    lateinit var binding: ActivityMain2Binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMain2Binding.inflate(layoutInflater)
@@ -22,7 +22,7 @@ class MainActivity2 : AppCompatActivity() {
 
             //برای دسترسی به منابع خود اندروید مثل رنگ در قسمت کدنویسی از کلمه android استفاده میکنیم
 
-            ContextCompat.getColor(this,android.R.color.transparent)
+            ContextCompat.getColor(this, android.R.color.transparent)
         )
 
         //فعال کردن و نمایش دکمه برگشت در Toolbar
@@ -44,16 +44,12 @@ class MainActivity2 : AppCompatActivity() {
     //درست مثل bottom navigation
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         //دکمه android.R.id.home در حکم همان دکمه homebutton یا بک در toolbar میباشد
-        if(item.itemId == android.R.id.home ) {
+        if (item.itemId == android.R.id.home) {
 
             onBackPressed() //این تابع مثل دکمه بک گوشی عمل میکند
         }
         return true
     }
-
-
-
-
 
 
 }
