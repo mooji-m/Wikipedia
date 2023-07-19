@@ -20,6 +20,7 @@
         android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.Toolbar
+            app:layout_scrollFlags="scroll|enterAlways"
             android:theme="@style/myToolbar"
             app:titleTextAppearance="@style/myToolbar"
             android:id="@+id/toolBarMain"
