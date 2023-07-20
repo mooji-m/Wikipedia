@@ -5,12 +5,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.mooji.cod.wikipedia.MainActivity2
-import com.mooji.cod.wikipedia.adapter.ExploreAdapter
+import com.mooji.cod.wikipedia.activity.MainActivity2
 import com.mooji.cod.wikipedia.adapter.ItemEvents
 import com.mooji.cod.wikipedia.adapter.TrendAdapter
 import com.mooji.cod.wikipedia.data.ItemPost
@@ -183,7 +181,7 @@ lateinit var binding:FragmentTrendBinding
     override fun onItemCLicked(itemPost: ItemPost) {
 
 
-        val intent = Intent(activity,MainActivity2::class.java)
+        val intent = Intent(activity, MainActivity2::class.java)
 
         intent.putExtra(SEND_DATA_TO_SECOND_ACTIVITY,itemPost)
         startActivity(intent)

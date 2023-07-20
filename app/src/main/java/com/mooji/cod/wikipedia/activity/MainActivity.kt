@@ -1,12 +1,21 @@
-package com.mooji.cod.wikipedia
+package com.mooji.cod.wikipedia.activity
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Message
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import cn.pedant.SweetAlert.SweetAlertDialog
+import com.google.android.material.snackbar.Snackbar
+import com.mooji.cod.wikipedia.R
 import com.mooji.cod.wikipedia.fragments.FragmentExplore
 import com.mooji.cod.wikipedia.fragments.FragmentProfile
 import com.mooji.cod.wikipedia.fragments.FragmentTrend
@@ -29,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             this ,
             binding.drawerLayoutMain ,
             binding.toolBarMain ,
-            R.string.openDrawer ,
+            R.string.openDrawer,
             R.string.closeDrawer
         )
         binding.drawerLayoutMain.addDrawerListener(actionBarDrawerToggle)
@@ -93,6 +102,23 @@ class MainActivity : AppCompatActivity() {
                 R.id.menu_video_maker -> {
                     binding.drawerLayoutMain.closeDrawer(GravityCompat.START)
 
+                    Snackbar
+                        .make(binding.root,"You can Create Video",Snackbar.LENGTH_LONG)
+                        .setAction("Retry"){
+                            Toast.makeText(this, "checked", Toast.LENGTH_SHORT).show()
+                        }
+                        .setActionTextColor(ContextCompat.getColor(this, R.color.white))
+                        .setBackgroundTint(ContextCompat.getColor(this, R.color.blue))
+                        .show()
+
+                }
+                R.id.menu_translator -> {
+                    binding.drawerLayoutMain.closeDrawer(GravityCompat.START)
+
+
+                    val intent = Intent(this,MainActivity3::class.java)
+                    startActivity(intent)
+
                 }
              // -----------------------------------------
 
@@ -100,12 +126,15 @@ class MainActivity : AppCompatActivity() {
 
                     binding.drawerLayoutMain.closeDrawer(GravityCompat.START)
 
+                    openWebsite("https://www.wikipedia.org/")
+
                 }
 
                 R.id.menu_openWikimedia -> {
 
                     binding.drawerLayoutMain.closeDrawer(GravityCompat.START)
 
+                    openWebsite("https://www.wikimedia.org/")
                     
                 }
 
@@ -184,17 +213,25 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun replaceFragments(fragment:Fragment) {
+    private fun openWebsite(url: String) {
+
+        val intent = Intent(Intent.ACTION_VIEW,Uri.parse(url))
+        startActivity(intent)
+
+    }
+
+    private fun replaceFragments(fragment:Fragment) {
         //از replace استفاده میکنیم تا با ادد کردن حجم مموری زیاد نشود و همچنین با هربارکلیک روی ایتم فرگمنت بروز شده لود شود
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.frame_main_container,fragment)
         transaction.commit()
     }
 
-    fun firstRun() {
+    private fun firstRun() {
 
         replaceFragments(FragmentExplore())
-        binding.bottomNavigationMain.selectedItemId = R.id.menu_explore // اینکار باعث میشود ایتم اکسپلور بعنوان پیش فرض انتخاب شود
+        binding.bottomNavigationMain.selectedItemId =
+            R.id.menu_explore // اینکار باعث میشود ایتم اکسپلور بعنوان پیش فرض انتخاب شود
 
     }
 
@@ -202,6 +239,49 @@ class MainActivity : AppCompatActivity() {
         super.onBackPressed()
 
         binding.navigationViewMain.menu.getItem(1).isChecked = false
+    }
+
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+
+
+        // همان طورکه layoutinflater داشتیم برای ساخت منو اصلی هم menuinflater داریم
+        // که چون در اکتویتی یک نمونه ازش رو داریم نیازی به ساخت از کلاس آن نیست
+        menuInflater.inflate(R.menu.menu_main,menu)
+
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when(item.itemId) {
+
+            R.id.exit -> {
+                val dialog = SweetAlertDialog(this,SweetAlertDialog.WARNING_TYPE)
+                dialog.titleText = "Alert"
+                dialog.confirmText = "Exit"
+                dialog.cancelText = "Cancel"
+                dialog.contentText = "Are you sure you want to Exit?"
+
+
+                dialog.setCancelClickListener {
+                    dialog.dismiss()
+                }
+
+                dialog.setConfirmClickListener {
+                    finish()
+
+                }
+                dialog.show()
+
+
+            }
+
+
+
+        }
+
+        return true
     }
 
 }

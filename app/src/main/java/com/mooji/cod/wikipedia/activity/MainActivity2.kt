@@ -1,4 +1,4 @@
-package com.mooji.cod.wikipedia
+package com.mooji.cod.wikipedia.activity
 
 import android.content.Intent
 import android.net.Uri

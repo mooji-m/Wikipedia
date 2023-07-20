@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.mooji.cod.wikipedia.R
 import com.mooji.cod.wikipedia.databinding.FragmentPhotographerBinding
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation
@@ -32,7 +33,7 @@ lateinit var binding: FragmentPhotographerBinding
         Glide
             .with(this)
             .load(R.drawable.img_photographer)
-            .transform(RoundedCornersTransformation(16,8))
+            .transform(CenterCrop(),RoundedCornersTransformation(24,8))
             .into(binding.imgPhotographer)
 
 
