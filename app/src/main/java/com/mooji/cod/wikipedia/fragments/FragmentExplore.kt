@@ -1,19 +1,23 @@
 package com.mooji.cod.wikipedia.fragments
 
+import android.content.Intent
 import android.icu.lang.UCharacter
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.mooji.cod.wikipedia.MainActivity2
 import com.mooji.cod.wikipedia.adapter.ExploreAdapter
+import com.mooji.cod.wikipedia.adapter.ItemEvents
 import com.mooji.cod.wikipedia.data.ItemPost
 import com.mooji.cod.wikipedia.databinding.FragmentExploreBinding
 
-class FragmentExplore : Fragment() {
+class FragmentExplore : Fragment(),ItemEvents {
 lateinit var binding:FragmentExploreBinding
 
     override fun onCreateView(
@@ -124,10 +128,21 @@ lateinit var binding:FragmentExploreBinding
         )
 
 
-        val myAdapter = ExploreAdapter(dataExplore)
+        val myAdapter = ExploreAdapter(dataExplore,this)
 
         binding.recyclerExplore.adapter = myAdapter
         binding.recyclerExplore.layoutManager = LinearLayoutManager(context,RecyclerView.VERTICAL,false)
+
+    }
+
+    override fun onItemCLicked(itemPost: ItemPost) {
+
+
+        val intent = Intent(activity, MainActivity2::class.java)
+
+        intent.putExtra(SEND_DATA_TO_SECOND_ACTIVITY,itemPost)
+        startActivity(intent)
+
 
     }
 

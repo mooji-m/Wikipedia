@@ -11,7 +11,7 @@ import com.mooji.cod.wikipedia.data.ItemPost
 import com.mooji.cod.wikipedia.databinding.ItemTrendBinding
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation
 
-class TrendAdapter(private val data:ArrayList<ItemPost>) : RecyclerView.Adapter<TrendAdapter.TrendViewHolder>() {
+class TrendAdapter(private val data:ArrayList<ItemPost>,val itemEvents: ItemEvents) : RecyclerView.Adapter<TrendAdapter.TrendViewHolder>() {
     lateinit var binding:ItemTrendBinding
 
     inner class TrendViewHolder(itemView:View) : RecyclerView.ViewHolder(itemView) {
@@ -31,6 +31,12 @@ class TrendAdapter(private val data:ArrayList<ItemPost>) : RecyclerView.Adapter<
             binding.txtTrendInsight.text = itemPost.insight
 
             binding.txtNumber.text = (adapterPosition + 1).toString()
+
+
+            itemView.setOnClickListener {
+
+                itemEvents.onItemCLicked(itemPost)
+            }
 
         }
 

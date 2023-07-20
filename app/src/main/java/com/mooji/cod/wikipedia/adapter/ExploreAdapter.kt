@@ -8,12 +8,12 @@ import com.bumptech.glide.Glide
 import com.mooji.cod.wikipedia.data.ItemPost
 import com.mooji.cod.wikipedia.databinding.ItemExploreBinding
 
-class ExploreAdapter(private val data:ArrayList<ItemPost>) : RecyclerView.Adapter<ExploreAdapter.ExploreViewHolder>() {
+class ExploreAdapter(private val data:ArrayList<ItemPost>,val itemEvents: ItemEvents) : RecyclerView.Adapter<ExploreAdapter.ExploreViewHolder>() {
     lateinit var binding:ItemExploreBinding
 
     inner class ExploreViewHolder(itemView:View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bindViews(itemPost: ItemPost) {
+        fun bindViews(itemPost: ItemPost) { // ایتم پست مشخص میکند در حال حاضر کدوم آیتم انتخاب شده
 
             val glide = Glide
                 .with(itemView.context)
@@ -24,6 +24,16 @@ class ExploreAdapter(private val data:ArrayList<ItemPost>) : RecyclerView.Adapte
             binding.txtExploreTitle.text = itemPost.txtTitle
             binding.txtExploreSubtitle.text = itemPost.txtSubtitle
             binding.txtExploreDetail.text = itemPost.txtDetail
+
+            // در این جا میتوانیم SetOnClickListener برای آیتم های recycler خود ست کنیم
+            //در اکتیویتی به دیتابیس دسترسی داریم برای همین عملیات کلیک شدن باید در اکتویتی مدیریت شود و وظیفه Recycler فقط نمایش اطلاعات است
+            itemView.setOnClickListener {
+
+                itemEvents.onItemCLicked(itemPost)
+
+            }
+
+
 
         }
 
