@@ -9,7 +9,7 @@
         tools:ignore="HardcodedText" />
 
     <item
-
+        android:checkable="true"
         android:id="@+id/menu_photograph"
         android:icon="@drawable/ic_photographer"
         android:title="Be a photographer" />
