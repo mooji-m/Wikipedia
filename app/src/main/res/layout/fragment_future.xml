@@ -5,18 +5,18 @@
     android:layout_height="match_parent">
 
 
-    
+
     <soup.neumorphism.NeumorphCardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="-4dp"
+        android:layout_marginStart="-2dp"
         android:layout_marginTop="55dp"
         android:padding="26dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:neumorph_backgroundColor="#D1FEDF"
-        app:neumorph_shadowColorDark="@color/shadow1"
-        app:neumorph_shadowColorLight="@color/shadow2"
+        app:neumorph_backgroundColor="#D4E157"
+        app:neumorph_shadowColorDark="#B4BF4A"
+        app:neumorph_shadowColorLight="#F4FF64"
         app:neumorph_shadowElevation="4dp"
         app:neumorph_shapeAppearance="@style/NeumorphismCard"
         app:neumorph_shapeType="flat">
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:text="Material 3"
             android:textColor="#004D40"
-            android:textSize="22sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/txt_2"
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:text="Material 3 will be made"
             android:textColor="#004D40"
-            android:textSize="22sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/txt_3"
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:text="Material 3 will be made soon..."
             android:textColor="#004D40"
-            android:textSize="22sp" />
+            android:textSize="20sp" />
 
 
     </soup.neumorphism.NeumorphCardView>
