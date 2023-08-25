@@ -109,7 +109,6 @@ Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit 
         app:layout_anchor="@id/appBarMain"
         app:layout_anchorGravity="bottom|end"
         app:useCompatPadding="true"
-
         android:src="@drawable/ic_wikipedia_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

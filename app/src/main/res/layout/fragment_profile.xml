@@ -3,7 +3,223 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:clipToPadding="false">
+
+
+    <ImageView
+        android:id="@+id/img_main"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/faceee"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardMainOuter"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardMain"
+            android:layout_width="match_parent"
+            android:layout_height="440dp"
+            android:layout_marginTop="19dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/general_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <TextView
+                        android:id="@+id/txt_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="24dp"
+                        android:text="Mohammad hossein Asghari"
+                        android:textColor="@color/black"
+                        android:textSize="26sp"
+                        android:theme="@style/fontName"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="4dp"
+                        android:src="@drawable/ic_kotlin"
+                        app:layout_constraintBottom_toBottomOf="@+id/txt_name"
+                        app:layout_constraintStart_toEndOf="@+id/txt_name"
+                        app:layout_constraintTop_toTopOf="@+id/txt_name" />
+
+                    <TextView
+                        android:id="@+id/txt_subtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Android Developer"
+                        android:textColor="#E1464859"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="@+id/txt_name"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_name" />
+
+
+                    <ImageView
+                        android:id="@+id/img_dot"
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:layout_marginStart="5dp"
+                        android:src="@drawable/ic_dot_6"
+                        app:layout_constraintBottom_toBottomOf="@+id/txt_subtitle"
+                        app:layout_constraintStart_toEndOf="@id/txt_subtitle"
+                        app:layout_constraintTop_toTopOf="@+id/txt_subtitle"
+                        app:tint="#E1464859" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="Iran"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/txt_subtitle"
+                        app:layout_constraintStart_toEndOf="@id/img_dot"
+                        app:layout_constraintTop_toTopOf="@+id/txt_subtitle" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip1"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="100dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="8dp"
+                        android:backgroundTint="#D1FEDF"
+                        android:checkable="true"
+                        android:text="Kotlin"
+                        android:textAlignment="center"
+                        android:textColor="@drawable/chipcolor1"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@+id/chip2"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_subtitle"
+                        app:rippleColor="#4CAF50" />
+
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip2"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="100dp"
+                        android:layout_height="60dp"
+                        android:backgroundTint="#ebe6fd"
+                        android:checkable="true"
+                        android:text="Python"
+                        android:textAlignment="center"
+                        android:textColor="@drawable/chipcolor2"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@+id/chip"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/chip1"
+                        app:layout_constraintTop_toTopOf="@id/chip1"
+                        app:rippleColor="#AB47BC" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="100dp"
+                        android:layout_height="60dp"
+                        android:backgroundTint="#feebe7"
+                        android:checkable="true"
+                        android:text="Java"
+                        android:textAlignment="center"
+                        android:textColor="@drawable/chipcolor1"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/chip2"
+                        app:layout_constraintTop_toTopOf="@id/chip2"
+                        app:rippleColor="#E57373" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:paddingStart="28dp"
+                    android:layout_marginTop="24dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/general_info">
+
+
+                    <View
+                        app:layout_constraintTop_toBottomOf="@id/tabLayoutMain"
+                        android:layout_width="match_parent"
+                        android:layout_marginEnd="28dp"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="12dp"
+                        android:background="@color/gray_light"/>
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:background="@color/transparent"
+                        android:id="@+id/tabLayoutMain"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tabIndicator="@drawable/custom_indicator"
+                        app:tabMode="scrollable"
+                        app:tabTextAppearance="@style/MyTabLayoutTextAppearance" />
+
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/viewPagerMain"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tabLayoutMain" />
+
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </com.google.android.material.card.MaterialCardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+

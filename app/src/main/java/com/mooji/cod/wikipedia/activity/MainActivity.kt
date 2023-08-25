@@ -1,6 +1,7 @@
 package com.mooji.cod.wikipedia.activity
 
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,6 +15,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import cn.pedant.SweetAlert.SweetAlertDialog
+import com.google.android.material.shape.ShapeAppearanceModel
 import com.google.android.material.snackbar.Snackbar
 import com.mooji.cod.wikipedia.R
 import com.mooji.cod.wikipedia.fragments.FragmentExplore
@@ -21,6 +23,9 @@ import com.mooji.cod.wikipedia.fragments.FragmentProfile
 import com.mooji.cod.wikipedia.fragments.FragmentTrend
 import com.mooji.cod.wikipedia.databinding.ActivityMainBinding
 import com.mooji.cod.wikipedia.fragments.FragmentPhotographer
+import soup.neumorphism.CornerFamily
+import soup.neumorphism.NeumorphShapeAppearanceModel
+import soup.neumorphism.NeumorphShapeDrawable
 
 class MainActivity : AppCompatActivity() {
 
@@ -82,21 +87,25 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.menu_photograph -> {
 
+                    if (binding.navigationViewMain.menu.getItem(1).isChecked == false) {
 
-                    val transaction = supportFragmentManager.beginTransaction()
-                    transaction.add(R.id.frame_main_container,FragmentPhotographer())
-                    transaction.addToBackStack(null)
-                    transaction.commit()
+                        binding.drawerLayoutMain.closeDrawer(GravityCompat.START)
 
-                    // طریقه فعال کردن قابلیت چک کردن از طریق کد نویسی بدون فعال کردن از طریق attribute
-                    //binding.navigationViewMain.menu.getItem(1).isCheckable = true
-                    binding.navigationViewMain.menu.getItem(1).isChecked = true
-                    //binding.navigationViewMain.setCheckedItem(R.id.menu_photograph) // این خط کد و خط بالا دو روش انتخابی است
+                        val transaction = supportFragmentManager.beginTransaction()
+                        transaction.add(R.id.frame_main_container, FragmentPhotographer())
+                        transaction.addToBackStack(null)
+                        transaction.commit()
+
+                        // طریقه فعال کردن قابلیت چک کردن از طریق کد نویسی بدون فعال کردن از طریق attribute
+                        //binding.navigationViewMain.menu.getItem(1).isCheckable = true
+                        binding.navigationViewMain.menu.getItem(1).isChecked = true
+                        //binding.navigationViewMain.setCheckedItem(R.id.menu_photograph) // این خط کد و خط بالا دو روش انتخابی است
 
 
-                    binding.drawerLayoutMain.closeDrawer(GravityCompat.START)
 
-
+                    } else {
+                        binding.drawerLayoutMain.closeDrawer(GravityCompat.START)
+                    }
 
                 }
                 R.id.menu_video_maker -> {
@@ -147,6 +156,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+
         binding.bottomNavigationMain.setOnItemReselectedListener {
             //چون با هربار کلیک رو آیتم آن آیتم انتخاب شده و دوباره لود میشود برای جلوگیری ازینکار
             //این تابع را صدا زده و میگوییم موقع فراخوانی دوباره هیچ کاری نکن
@@ -179,7 +189,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
+        binding.bottomNavigationMain.setBackgroundColor(ContextCompat.getColor(this,R.color.white))
         binding.bottomNavigationMain.setOnItemSelectedListener {
 
             when(it.itemId) {
@@ -237,7 +247,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
+        if(binding.drawerLayoutMain.isDrawerOpen(GravityCompat.START)) {
 
+            binding.drawerLayoutMain.closeDrawer(GravityCompat.START)
+        }
         binding.navigationViewMain.menu.getItem(1).isChecked = false
     }
 

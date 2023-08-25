@@ -10,5 +10,12 @@
     <color name="black_light">#BE000000</color>
     <color name="gray_light">#D6D6D6</color>
     <color name="green">#388E3C</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="startcolor">#e1e6f7</color>
+    <color name="endcolor">#FFF</color>
+    <color name="newbackground">#d1fedf</color>
+    <color name="shadow1">#b0d5bb</color>
+    <color name="shadow2">#f2ffff</color>
+
 
 </resources>
